@@ -61,9 +61,11 @@ fi
 # texinfo: required for installing gdb from source
 # xvfb pandoc wkhtmltopdf: required for building documentation
 # python3.6: currently not available in default Travis CI environment
+# gdb-avr, avr-libc, simulavr: tool chains for Atmel AVR targets
 sudo add-apt-repository -y ppa:jonathonf/python-3.6
+sudo add-apt-repository -y ppa:ucessentials/simulavr
 sudo apt-get -qq update
-sudo apt-get -qq install -y build-essential python3 splint gcc gdb gcc-arm-none-eabi gcc-powerpc-linux-gnu qemu-system-ppc texinfo xvfb pandoc wkhtmltopdf
+sudo apt-get -qq install -y build-essential python3 splint gcc gdb gcc-arm-none-eabi gcc-powerpc-linux-gnu qemu-system-ppc texinfo xvfb pandoc wkhtmltopdf gdb-avr avr-libc simulavr
 which python${PY_VER} || sudo apt-get install -y python${PY_VER}
 
 # gdb-arm-none-eabi: required for testing ARM systems.
