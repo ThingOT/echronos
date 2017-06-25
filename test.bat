@@ -27,7 +27,7 @@ REM
 REM @TAG(NICTA_AGPL)
 REM
 
-set PATH=C:\splint-3.1.1\bin;%PATH%
+set PATH=C:\splint-3.1.1\bin;C:\WinAVR-20100110\bin;C:\WinAVR-20100110\utils\bin;%PATH%
 IF NOT DEFINED PYTHON set PYTHON=py -3
 IF NOT DEFINED COREDIR set COREDIR=.
 

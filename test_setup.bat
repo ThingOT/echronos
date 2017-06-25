@@ -43,6 +43,13 @@ REM Install pylint because `x.py test style` depends on it
 IF NOT EXIST C:\splint-3.1.1 (
     powershell.exe -nologo -noprofile -command "& { Invoke-WebRequest 'http://www.splint.org/downloads/binaries/splint-3.1.1.win32.zip' -OutFile 'splint-3.1.1.win32.zip'; Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('splint-3.1.1.win32.zip', 'C:\'); }" || EXIT /B %ERRORLEVEL%
     del splint-3.1.1.win32.zip || EXIT /B %ERRORLEVEL%
-) ELSE (
-    EXIT /B 0
 )
+
+REM WinAVR cannot be installed from the default installer.
+REM Therefore, unpack an archive of a local installation instead.
+C: || EXIT /B %ERRORLEVEL%
+cd \ || EXIT /B %ERRORLEVEL%
+C:\cygwin64\bin\wget -q 'https://github.com/echronos/echronos/wiki/winavr.tar.xz' || EXIT /B %ERRORLEVEL%
+C:\cygwin64\bin\xz --decompress winavr.tar.xz || EXIT /B %ERRORLEVEL%
+C:\cygwin64\bin\tar xaf winavr.tar || EXIT /B %ERRORLEVEL%
+cd %APPVEYOR_BUILD_FOLDER% || EXIT /B %ERRORLEVEL%
