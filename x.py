@@ -141,12 +141,14 @@ CORE_SKELETONS = {
                               Component('preempt-null'),
                               Component('simple-semaphore', {'timeouts': False}),
                               Component('simple-semaphore-test')],
-    'acamar': [Component('reentrant'),
+    'acamar': [Component('docs'),
+               Component('reentrant'),
                Component('acamar'),
                Component('stack', pkg_component=True),
                Component('context-switch', pkg_component=True),
+               Component('preempt-nosched'),
                Component('error'),
-               Component('task')],
+               Component('task', {'task_start_api': False, 'has_scheduler': False})],
     'gatria': [Component('reentrant'),
                Component('stack', pkg_component=True),
                Component('context-switch', pkg_component=True),
@@ -195,7 +197,7 @@ CORE_SKELETONS = {
               Component('error'),
               # Please note that the task_start_api pystache tag is used solely to block out a rigel-specific section
               # of the Task Configuration chapter.
-              Component('task', {'task_start_api': True}),
+              Component('task', {'task_start_api': True, 'has_scheduler': True}),
               Component('rigel')],
     'kochab': [Component('docs'),
                Component('reentrant'),
@@ -211,7 +213,7 @@ CORE_SKELETONS = {
                Component('blocking-mutex', {'lock_timeout': True, 'preemptive': True, 'prio_ceiling': False}),
                Component('simple-semaphore', {'timeouts': True, 'preemptive': True}),
                Component('error'),
-               Component('task', {'task_start_api': False}),
+               Component('task', {'task_start_api': False, 'has_scheduler': True}),
                Component('kochab')],
     'phact': [Component('docs'),
               Component('reentrant'),
@@ -227,7 +229,7 @@ CORE_SKELETONS = {
               Component('blocking-mutex', {'lock_timeout': True, 'preemptive': True, 'prio_ceiling': True}),
               Component('simple-semaphore', {'timeouts': True, 'preemptive': True}),
               Component('error'),
-              Component('task', {'task_start_api': False}),
+              Component('task', {'task_start_api': False, 'has_scheduler': True}),
               Component('phact')],
 }
 
