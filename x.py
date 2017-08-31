@@ -6,12 +6,10 @@
 #
 # All rights reserved. CSIRO is willing to grant you a licence to the eChronos
 # real-time operating system under the terms of the CSIRO_BSD_MIT license. See
-# the file LICENSE_CSIRO_BSD for details.
+# the file "LICENSE_CSIRO_BSD_MIT.txt" for details.
 #
 # @TAG(CSIRO_BSD_MIT)
 #
-One of the main tasks of `x.py` is to create the releasable artifacts (i.e.: things that will be shipped to users).
-
 ### `prj` release information
 
 prj will be distributed in source format for now as the customer likes it that way, and also because of the

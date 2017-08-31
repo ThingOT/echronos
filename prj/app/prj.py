@@ -6,12 +6,10 @@
 #
 # All rights reserved. CSIRO is willing to grant you a licence to the eChronos
 # real-time operating system under the terms of the CSIRO_BSD_MIT license. See
-# the file LICENSE_CSIRO_BSD for details.
+# the file "LICENSE_CSIRO_BSD_MIT.txt" for details.
 #
 # @TAG(CSIRO_BSD_MIT)
 #
-Main entry point.
-
 """
 if __name__ == "__main__":
     import sys
